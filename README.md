@@ -42,7 +42,7 @@ in **xml**
 
 ```
 
-Add PianoBar Listener to **PianoView**
+in Activity
 ```kotlin
 
 
