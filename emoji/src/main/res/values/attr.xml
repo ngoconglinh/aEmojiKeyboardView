@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="EmojiView">
+        <attr name="evColumCount" format="integer" />
+        <attr name="evSize" format="dimension" />
+        <attr name="evTabSize" format="dimension" />
+        <attr name="evTabMarginEnd" format="dimension" />
+        <attr name="evTabSelectedColor" format="color" />
+        <attr name="evTabColor" format="color" />
+    </declare-styleable>
+</resources>
