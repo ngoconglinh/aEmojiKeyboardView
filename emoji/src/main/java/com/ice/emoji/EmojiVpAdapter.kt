@@ -26,19 +26,19 @@ class EmojiVpAdapter(
     private val listener: EmojiListener?,
     private val listEmojiGroup: List<EmojiGroup>
 ): RecyclerView.Adapter<EmojiVpAdapter.ViewHolder>() {
-
+    private var adapterRecent: EmojiRcvAdapter? = null
     inner class ViewHolder(private val viewBinding: LayoutEmojiPageBinding) : RecyclerView.ViewHolder(viewBinding.root) {
         fun onBind(eg: EmojiGroup, position: Int) {
             viewBinding.loadingView.visibility = View.VISIBLE
             pageInit.observe(owner) {
                 if (it != position) return@observe
                 owner.lifecycleScope.launch(Dispatchers.IO) {
-                    var rcvAdapter: EmojiRcvAdapter? = null
-                    rcvAdapter = EmojiRcvAdapter(emojiItemSize, listener) {
-                        Recent.setStrTemplateRecent(viewBinding.root.context, it)
+                    val rcvAdapter = EmojiRcvAdapter(emojiItemSize, listener) { emoji ->
+                        Recent.setStrTemplateRecent(viewBinding.root.context, emoji)
                         val newRecent = Recent.getStrTemplateRecent(viewBinding.root.context)
-                        rcvAdapter?.submitList(newRecent)
+                        adapterRecent?.submitList(newRecent)
                     }
+                    if (position == 0) adapterRecent = rcvAdapter
                     val allEmoji = eg.listEmoji
                     withContext(Dispatchers.Main) {
                         viewBinding.rcvEmoji.apply {
@@ -48,7 +48,7 @@ class EmojiVpAdapter(
                             layoutManager = GridLayoutManager(viewBinding.root.context, colCount)
                             adapter = rcvAdapter
                         }
-                        rcvAdapter?.submitList(allEmoji)
+                        rcvAdapter.submitList(allEmoji)
                         viewBinding.loadingView.visibility = View.GONE
                         viewBinding.llEmpty.isVisible = allEmoji.isEmpty()
                         viewBinding.rcvEmoji.isVisible = !allEmoji.isEmpty()
