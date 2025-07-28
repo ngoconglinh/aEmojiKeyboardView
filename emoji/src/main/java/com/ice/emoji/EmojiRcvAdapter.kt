@@ -10,7 +10,8 @@ import com.ice.emoji.model.Emoji
 
 class EmojiRcvAdapter(
     private val emojiItemSize: Float,
-    private val listener: EmojiListener?
+    private val listener: EmojiListener?,
+    private val onEmojiClicked: (Emoji) -> Unit
 ) : ListAdapter<Emoji, EmojiRcvAdapter.EmojiViewHolder>(DiffCallback) {
 
     object DiffCallback : DiffUtil.ItemCallback<Emoji>() {
@@ -30,6 +31,7 @@ class EmojiRcvAdapter(
                 textSize = emojiItemSize
                 setOnClickListener {
                     listener?.onEmojiClick(item.char)
+                    onEmojiClicked(item)
                 }
             }
         }

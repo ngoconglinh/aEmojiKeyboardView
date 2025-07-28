@@ -76,7 +76,9 @@ class EmojiView @JvmOverloads constructor(
         owner.lifecycleScope.launch(Dispatchers.IO) {
             val fileInString: String = context.assets.open("emoji_data.json").bufferedReader().use { it.readText() }
             val allEmoji = Gson().fromJson(fileInString, Array<Emoji>::class.java).toList()
-            val allEmojiByGroup = groupEmojisByGroup(allEmoji)
+            val allEmojiByGroup = groupEmojisByGroup(allEmoji).toMutableList()
+            val recentGroup = EmojiGroup("Recent emoji", Recent.getStrTemplateRecent(context))
+            allEmojiByGroup.add(0, recentGroup)
             withContext(Dispatchers.Main) {
                 val vpAdapter = EmojiVpAdapter(pageInitiated, colCount, emojiItemSize, owner, emojiListener, allEmojiByGroup)
                 emojiBinding.vpEmoji.apply {
