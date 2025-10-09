@@ -29,10 +29,10 @@ class EmojiRcvAdapter(
             binding.tvEmoji.apply {
                 text = item.char
                 textSize = emojiItemSize
-                setOnClickListener {
-                    listener?.onEmojiClick(item.char)
-                    onEmojiClicked(item)
-                }
+            }
+            binding.root.setOnClickListener {
+                listener?.onEmojiClick(item.char)
+                onEmojiClicked(item)
             }
         }
     }

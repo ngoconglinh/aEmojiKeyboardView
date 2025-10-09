@@ -1,0 +1,41 @@
+R_DEF: Internal format may change without notice
+local
+array com_google_android_gms_fonts_certs
+array com_google_android_gms_fonts_certs_dev
+array com_google_android_gms_fonts_certs_prod
+array preloaded_fonts
+attr? evColumCount
+attr? evSize
+attr? evTabBgColor
+attr? evTabColor
+attr? evTabMarginEnd
+attr? evTabSelectedColor
+attr? evTabSize
+dimen tabItemPadding
+drawable baseline_access_time_24
+drawable circle_bg
+drawable ic_share
+font poppins
+id emojiView
+id flLine
+id ivShare
+id ivTabIcon
+id llEmpty
+id llTab
+id loadingView
+id main
+id rcvEmoji
+id tabEmojiCategory
+id tvEmoji
+id viewLine
+id vpEmoji
+layout activity_main
+layout item_loading
+layout layout_emoji_item
+layout layout_emoji_page
+layout layout_emoji_view
+layout layout_tab_item
+string txt_no_emoji_recently
+string txt_share
+string txt_tab_icon
+styleable EmojiView evColumCount evSize evTabSize evTabMarginEnd evTabSelectedColor evTabColor evTabBgColor

@@ -8,5 +8,6 @@
         <attr name="evTabMarginEnd" format="dimension" />
         <attr name="evTabSelectedColor" format="color" />
         <attr name="evTabColor" format="color" />
+        <attr name="evTabBgColor" format="color" />
     </declare-styleable>
 </resources>

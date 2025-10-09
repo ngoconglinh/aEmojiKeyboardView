@@ -42,10 +42,12 @@ class EmojiView @JvmOverloads constructor(
     private var tabSize = 23f
     private var tabItemPadding = 20f
     private var tabColor: ColorStateList
+    private var tabBgColor: ColorStateList
 
     init {
         var tabSelectedColor = "#ffffff".toColorInt()
         var tabUnSelectedColor = "#000000".toColorInt()
+        var tabBgSelectedColor = "#00000000".toColorInt()
         getContext().withStyledAttributes(attrs, R.styleable.EmojiView) {
             colCount = getInteger(R.styleable.EmojiView_evColumCount, 7)
             emojiItemSize = getDimensionPixelSize(R.styleable.EmojiView_evSize, 23).toFloat()
@@ -53,6 +55,7 @@ class EmojiView @JvmOverloads constructor(
             tabItemPadding = getDimensionPixelSize(R.styleable.EmojiView_evTabMarginEnd, 23).toFloat()
             tabSelectedColor = getColor(R.styleable.EmojiView_evTabSelectedColor, tabSelectedColor)
             tabUnSelectedColor = getColor(R.styleable.EmojiView_evTabColor, tabUnSelectedColor)
+            tabBgSelectedColor = getColor(R.styleable.EmojiView_evTabBgColor, tabBgSelectedColor)
         }
 
         val states = arrayOf<IntArray?>(
@@ -61,7 +64,9 @@ class EmojiView @JvmOverloads constructor(
         )
 
         val colors = intArrayOf(tabSelectedColor, tabUnSelectedColor)
+        val colorsBg = intArrayOf(tabBgSelectedColor, "#00000000".toColorInt())
         tabColor = ColorStateList(states, colors)
+        tabBgColor = ColorStateList(states, colorsBg)
     }
 
     private fun setTabIcon(listIcon: List<Int>) {
@@ -96,7 +101,6 @@ class EmojiView @JvmOverloads constructor(
         emojiBinding.ivShare.layoutParams = params
         emojiBinding.flLine.layoutParams = LinearLayout.LayoutParams((tabSize  * 0.7).toInt(), tabSize.toInt())
         emojiBinding.viewLine.backgroundTintList = tabColor
-
         TabLayoutMediator(
             emojiBinding.tabEmojiCategory,
             emojiBinding.vpEmoji
@@ -108,7 +112,10 @@ class EmojiView @JvmOverloads constructor(
                 null
             }
             icon?.let { tabBinding.ivTabIcon.setImageResource(icon) }
-            tabBg?.let { tabBinding.ivTabIcon.background = ContextCompat.getDrawable(context, it) }
+            tabBg?.let {
+                tabBinding.ivTabIcon.background = ContextCompat.getDrawable(context, it)
+                tabBinding.ivTabIcon.background.setTintList(tabBgColor)
+            }
             tabBinding.ivTabIcon.imageTintList = tabColor
             tab.customView = tabBinding.root
             tab.customView?.layoutParams = params
@@ -129,6 +136,26 @@ class EmojiView @JvmOverloads constructor(
         emojiBinding.ivShare.setOnClickListener {
             emojiListener?.onShare()
         }
+    }
+
+    fun setTabColorTint(tabSelectedColor: Int, tabUnSelectedColor: Int, bgSelectedColor: Int) {
+        val colors = intArrayOf(tabSelectedColor, tabUnSelectedColor)
+        val states = arrayOf<IntArray?>(
+            intArrayOf(android.R.attr.state_selected),
+            intArrayOf(-android.R.attr.state_selected)
+        )
+
+        tabColor = ColorStateList(states, colors)
+        val colorsBg = intArrayOf(bgSelectedColor, "#00000000".toColorInt())
+        tabBgColor = ColorStateList(states, colorsBg)
+        for (i in 0..emojiBinding.tabEmojiCategory.tabCount) {
+            val customView = emojiBinding.tabEmojiCategory.getTabAt(i)?.customView
+            val ivTabIcon = customView?.findViewById<ImageView>(R.id.ivTabIcon)
+            ivTabIcon?.imageTintList = tabColor
+            ivTabIcon?.background?.setTintList(tabBgColor)
+        }
+        emojiBinding.viewLine.backgroundTintList = tabColor
+        emojiBinding.ivShare.imageTintList = tabColor
     }
 
     private fun groupEmojisByGroup(emojis: List<Emoji>): List<EmojiGroup> {
