@@ -1,2 +1,5 @@
 jdk:
   - openjdk8
+
+install:
+  - ./gradlew :emoji:assembleRelease -x lint

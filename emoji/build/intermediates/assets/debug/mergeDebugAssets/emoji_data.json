@@ -19432,14 +19432,6 @@
     "subgroup": "person-symbol"
   },
   {
-    "codes": "1FAC6",
-    "char": "🫆",
-    "name": "fingerprint",
-    "category": "People & Body (person-symbol)",
-    "group": "People & Body",
-    "subgroup": "person-symbol"
-  },
-  {
     "codes": "1F435",
     "char": "🐵",
     "name": "monkey face",
@@ -20699,14 +20691,6 @@
     "codes": "1F344",
     "char": "🍄",
     "name": "mushroom",
-    "category": "Animals & Nature (plant-other)",
-    "group": "Animals & Nature",
-    "subgroup": "plant-other"
-  },
-  {
-    "codes": "1FABE",
-    "char": "🪾",
-    "name": "leafless tree",
     "category": "Animals & Nature (plant-other)",
     "group": "Animals & Nature",
     "subgroup": "plant-other"

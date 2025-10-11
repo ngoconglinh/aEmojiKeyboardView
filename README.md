@@ -31,14 +31,14 @@ in **xml**
     <com.ice.emoji.EmojiView
         android:id="@+id/emojiView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:evColumCount="7"
         app:evSize="@dimen/_15sdp"
         app:evTabColor="@color/blue"
         app:evTabMarginEnd="@dimen/_7sdp"
         app:evTabSelectedColor="@color/purple_200"
-        app:evTabSize="@dimen/_13ssp"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:evTabBgColor="@color/black"
+        app:evTabSize="@dimen/_13ssp"/>
 
 ```
 
@@ -46,15 +46,12 @@ in Activity
 ```kotlin
 
 
-class MainActivity : BaseViewBinding<ActivityMainBinding>(ActivityMainBinding::inflate),
+class MainActivity : AppCompatActivity,
     EmojiListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initData()
-    }
-
-    private fun initData() {
+        //infalate view
         val tabIcon = listOf(
             com.ice.emoji.R.drawable.baseline_access_time_24,
             com.ice.emoji.R.drawable.baseline_access_time_24,
@@ -65,7 +62,7 @@ class MainActivity : BaseViewBinding<ActivityMainBinding>(ActivityMainBinding::i
             com.ice.emoji.R.drawable.baseline_access_time_24,
             com.ice.emoji.R.drawable.baseline_access_time_24
         )
-        EmojiView.EmojiViewBuilder(bd.emojiView)
+        EmojiView.EmojiViewBuilder(context, emojiView)
             .setTabIcon(tabIcon)
             .setTabBackground(com.ice.emoji.R.drawable.circle_bg)
             .emojiViewListener(this)
@@ -73,11 +70,11 @@ class MainActivity : BaseViewBinding<ActivityMainBinding>(ActivityMainBinding::i
     }
 
     override fun onEmojiClick(s: String) {
-
+        //return a Emoji string
     }
 
     override fun onShare() {
-
+        //on button share clicked
     }
 }
 ```
