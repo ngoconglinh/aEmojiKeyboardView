@@ -1,5 +1,2 @@
 jdk:
-  - openjdk11
-
-install:
-  - ./gradlew :emoji:clean :emoji:assembleRelease -x lint --no-daemon --stacktrace
+  - openjdk8
