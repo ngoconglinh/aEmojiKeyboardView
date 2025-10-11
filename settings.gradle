@@ -20,5 +20,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Emoji Keyboard"
-include ':emoji'
-include ':app'
+include(":emoji")
+if (System.getenv("CI") == null) {
+    include(":app")
+}
