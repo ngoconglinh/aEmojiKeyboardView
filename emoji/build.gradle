@@ -49,10 +49,6 @@ dependencies {
 
     //gson
     implementation 'com.google.code.gson:gson:2.8.8'
-
-    implementation "androidx.emoji2:emoji2:1.4.0"
-    implementation "androidx.emoji2:emoji2-views:1.4.0"
-    implementation "androidx.emoji2:emoji2-bundled:1.4.0"
 }
 
 publishing {

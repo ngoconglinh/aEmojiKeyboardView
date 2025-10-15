@@ -2,6 +2,7 @@ package com.ice.emoji
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.os.Build
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
@@ -10,8 +11,6 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.withStyledAttributes
 import androidx.core.graphics.toColorInt
-import androidx.emoji2.bundled.BundledEmojiCompatConfig
-import androidx.emoji2.text.EmojiCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
@@ -81,7 +80,8 @@ class EmojiView @JvmOverloads constructor(
 
     private fun setupWithLifecycle(owner: LifecycleOwner) {
         owner.lifecycleScope.launch(Dispatchers.IO) {
-            val fileInString: String = context.assets.open("emoji_data.json").bufferedReader().use { it.readText() }
+            val json = if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.Q) "emoji_data_2.json" else "emoji_data.json"
+            val fileInString: String = context.assets.open(json).bufferedReader().use { it.readText() }
             val allEmoji = Gson().fromJson(fileInString, Array<Emoji>::class.java).toList()
             val allEmojiByGroup = groupEmojisByGroup(allEmoji).toMutableList()
             val recentGroup = EmojiGroup("Recent emoji", Recent.getStrTemplateRecent(context))
@@ -172,26 +172,10 @@ class EmojiView @JvmOverloads constructor(
     }
 
     override fun onEmojiClick(s: String) {
-        val emoji = codeToEmoji(s)
-        val emojiString = EmojiCompat.get().process(emoji)
-        emojiViewListener?.onEmojiClick(emojiString.toString())
-    }
-
-    private fun codeToEmoji(codes: String): String {
-        return codes
-            .split(" ")
-            .filter { it.isNotEmpty() }
-            .map { Integer.parseInt(it, 16) }
-            .toIntArray()
-            .let { String(it, 0, it.size) }
+        emojiViewListener?.onEmojiClick(s)
     }
 
     class EmojiViewBuilder(private val emojiView: EmojiView) {
-
-        constructor(context: Context, emojiView: EmojiView): this(emojiView) {
-            val config = BundledEmojiCompatConfig(context)
-            EmojiCompat.init(config)
-        }
 
         fun setTabIcon(listIcon: List<Int>): EmojiViewBuilderTabBg {
             emojiView.setTabIcon(listIcon)

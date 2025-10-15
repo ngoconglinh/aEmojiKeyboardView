@@ -31,7 +31,7 @@ class EmojiRcvAdapter(
                 textSize = emojiItemSize
             }
             binding.root.setOnClickListener {
-                listener?.onEmojiClick(item.codes)
+                listener?.onEmojiClick(item.char)
                 onEmojiClicked(item)
             }
         }
