@@ -80,8 +80,7 @@ class EmojiView @JvmOverloads constructor(
 
     private fun setupWithLifecycle(owner: LifecycleOwner) {
         owner.lifecycleScope.launch(Dispatchers.IO) {
-            val json = if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.Q) "emoji_data_2.json" else "emoji_data.json"
-            val fileInString: String = context.assets.open(json).bufferedReader().use { it.readText() }
+            val fileInString: String = context.assets.open("emoji_data_2.json").bufferedReader().use { it.readText() }
             val allEmoji = Gson().fromJson(fileInString, Array<Emoji>::class.java).toList()
             val allEmojiByGroup = groupEmojisByGroup(allEmoji).toMutableList()
             val recentGroup = EmojiGroup("Recent emoji", Recent.getStrTemplateRecent(context))
