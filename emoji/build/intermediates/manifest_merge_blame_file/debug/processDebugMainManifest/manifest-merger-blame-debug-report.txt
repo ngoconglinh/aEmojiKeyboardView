@@ -7,112 +7,122 @@
 7        android:targetSdkVersion="35" />
 8
 9    <permission
-9-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\65174d87c368b4a1097854f23e328627\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+9-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
 10        android:name="com.ice.emoji.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-10-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\65174d87c368b4a1097854f23e328627\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+10-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
 11        android:protectionLevel="signature" />
-11-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\65174d87c368b4a1097854f23e328627\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+11-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
 12
 13    <uses-permission android:name="com.ice.emoji.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-13-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\65174d87c368b4a1097854f23e328627\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
-13-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\65174d87c368b4a1097854f23e328627\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+13-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+13-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 14
 15    <application
-15-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:4:5-17:19
-16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\65174d87c368b4a1097854f23e328627\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
-17        android:debuggable="true"
-18        android:extractNativeLibs="false"
-19        android:icon="@drawable/baseline_access_time_24"
-19-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:6:9-57
-20        android:label="Emoji"
-20-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:5:9-30
-21        android:testOnly="true" >
-22        <activity
-22-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:7:9-16:20
-23            android:name="com.ice.emoji.MainActivity"
-23-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:8:13-41
-24            android:exported="true"
-24-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:10:13-36
-25            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-25-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:9:13-69
-26            <intent-filter>
-26-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:11:13-15:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:12:17-69
-27-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:12:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:14:17-77
-29-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:14:27-74
-30            </intent-filter>
-31        </activity>
-32
-33        <provider
-33-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5a6ffd2a36c3b762d18a23ccab153167\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-34            android:name="androidx.startup.InitializationProvider"
-34-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5a6ffd2a36c3b762d18a23ccab153167\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-35            android:authorities="com.ice.emoji.androidx-startup"
-35-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5a6ffd2a36c3b762d18a23ccab153167\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-36            android:exported="false" >
-36-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5a6ffd2a36c3b762d18a23ccab153167\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-37            <meta-data
-37-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5a6ffd2a36c3b762d18a23ccab153167\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-38                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-38-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5a6ffd2a36c3b762d18a23ccab153167\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-39                android:value="androidx.startup" />
-39-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5a6ffd2a36c3b762d18a23ccab153167\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-40            <meta-data
-40-->[androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\fec5893ac05d2dae3114a4b4ea50f953\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-41                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-41-->[androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\fec5893ac05d2dae3114a4b4ea50f953\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-42                android:value="androidx.startup" />
-42-->[androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\fec5893ac05d2dae3114a4b4ea50f953\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-43            <meta-data
-43-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
-44                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-44-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
-45                android:value="androidx.startup" />
-45-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
-46        </provider>
-47
-48        <receiver
-48-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
-49            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-49-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
-50            android:directBootAware="false"
-50-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
-51            android:enabled="true"
-51-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
-52            android:exported="true"
-52-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
-53            android:permission="android.permission.DUMP" >
-53-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
-54            <intent-filter>
-54-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
-55                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-55-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
-55-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
-56            </intent-filter>
-57            <intent-filter>
-57-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
-58                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-58-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
-58-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
-59            </intent-filter>
-60            <intent-filter>
-60-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
-61                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-61-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
-61-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
-62            </intent-filter>
-63            <intent-filter>
-63-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
-64                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-64-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
-64-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\9.0-milestone-1\transforms\5843fc97787ff13b3f68daa2488736fd\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
-65            </intent-filter>
-66        </receiver>
-67    </application>
-68
-69</manifest>
+15-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:4:5-22:19
+16        android:allowBackup="true"
+16-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:5:9-35
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+18        android:dataExtractionRules="@xml/data_extraction_rules"
+18-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:6:9-65
+19        android:debuggable="true"
+20        android:extractNativeLibs="false"
+21        android:fullBackupContent="@xml/backup_rules"
+21-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:7:9-54
+22        android:icon="@drawable/baseline_access_time_24"
+22-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:8:9-57
+23        android:label="Emoji"
+23-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:9:9-30
+24        android:roundIcon="@drawable/baseline_access_time_24"
+24-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:10:9-62
+25        android:supportsRtl="true"
+25-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:11:9-35
+26        android:testOnly="true"
+27        android:theme="@style/Theme.Base" >
+27-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:12:9-42
+28        <activity
+28-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:13:9-21:20
+29            android:name="com.ice.emoji.MainActivity"
+29-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:14:13-41
+30            android:exported="true" >
+30-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:15:13-36
+31            <intent-filter>
+31-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:16:13-20:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:17:17-69
+32-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:17:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:19:17-77
+34-->E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:19:27-74
+35            </intent-filter>
+36        </activity>
+37
+38        <provider
+38-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+39            android:name="androidx.startup.InitializationProvider"
+39-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+40            android:authorities="com.ice.emoji.androidx-startup"
+40-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+41            android:exported="false" >
+41-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+42            <meta-data
+42-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+43                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+43-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+44                android:value="androidx.startup" />
+44-->[androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+45            <meta-data
+45-->[androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+46                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+46-->[androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+47                android:value="androidx.startup" />
+47-->[androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+48            <meta-data
+48-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+49                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+49-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+50                android:value="androidx.startup" />
+50-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+51        </provider>
+52
+53        <receiver
+53-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+54            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+54-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+55            android:directBootAware="false"
+55-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+56            android:enabled="true"
+56-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+57            android:exported="true"
+57-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+58            android:permission="android.permission.DUMP" >
+58-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+59            <intent-filter>
+59-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+60                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+60-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+60-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+61            </intent-filter>
+62            <intent-filter>
+62-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+63                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+63-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+63-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+64            </intent-filter>
+65            <intent-filter>
+65-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+66                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+66-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+66-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+67            </intent-filter>
+68            <intent-filter>
+68-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+69                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+69-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+69-->[androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+70            </intent-filter>
+71        </receiver>
+72    </application>
+73
+74</manifest>

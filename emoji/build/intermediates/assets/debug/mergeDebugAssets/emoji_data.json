@@ -400,22 +400,6 @@
     "subgroup": "face-neutral-skeptical"
   },
   {
-    "codes": "1F642 200D 2194 FE0F",
-    "char": "🙂‍↔️",
-    "name": "head shaking horizontally",
-    "category": "Smileys & Emotion (face-neutral-skeptical)",
-    "group": "Smileys & Emotion",
-    "subgroup": "face-neutral-skeptical"
-  },
-  {
-    "codes": "1F642 200D 2195 FE0F",
-    "char": "🙂‍↕️",
-    "name": "head shaking vertically",
-    "category": "Smileys & Emotion (face-neutral-skeptical)",
-    "group": "Smileys & Emotion",
-    "subgroup": "face-neutral-skeptical"
-  },
-  {
     "codes": "1F60C",
     "char": "😌",
     "name": "relieved face",
@@ -451,14 +435,6 @@
     "codes": "1F634",
     "char": "😴",
     "name": "sleeping face",
-    "category": "Smileys & Emotion (face-sleepy)",
-    "group": "Smileys & Emotion",
-    "subgroup": "face-sleepy"
-  },
-  {
-    "codes": "1FAE9",
-    "char": "🫩",
-    "name": "face with bags under eyes",
     "category": "Smileys & Emotion (face-sleepy)",
     "group": "Smileys & Emotion",
     "subgroup": "face-sleepy"
@@ -28664,14 +28640,6 @@
     "subgroup": "country-flag"
   },
   {
-    "codes": "1F1EA 1F1E6",
-    "char": "🇪🇦",
-    "name": "flag: Ceuta & Melilla",
-    "category": "Flags (country-flag)",
-    "group": "Flags",
-    "subgroup": "country-flag"
-  },
-  {
     "codes": "1F1EA 1F1E8",
     "char": "🇪🇨",
     "name": "flag: Ecuador",
@@ -30043,14 +30011,6 @@
     "codes": "1F1FA 1F1EC",
     "char": "🇺🇬",
     "name": "flag: Uganda",
-    "category": "Flags (country-flag)",
-    "group": "Flags",
-    "subgroup": "country-flag"
-  },
-  {
-    "codes": "1F1FA 1F1F2",
-    "char": "🇺🇲",
-    "name": "flag: U.S. Outlying Islands",
     "category": "Flags (country-flag)",
     "group": "Flags",
     "subgroup": "country-flag"

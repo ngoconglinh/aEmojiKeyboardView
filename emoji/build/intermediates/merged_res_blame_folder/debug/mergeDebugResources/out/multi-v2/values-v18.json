@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.ice.emoji-mergeDebugResources-34:/values-v18/values-v18.xml",
+            "outputFile": "com.ice.emoji-mergeDebugResources-30:/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "D:\\Application\\AndroidSDK\\caches\\9.0-milestone-1\\transforms\\09f0b919c24178252e44c34982c42f46\\transformed\\appcompat-1.7.1\\res\\values-v18\\values-v18.xml",
+                    "source": "D:\\Application\\AndroidSDK\\caches\\8.13\\transforms\\57e2aed7b68d8e42c93aa113a71cc710\\transformed\\appcompat-1.7.1\\res\\values-v18\\values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

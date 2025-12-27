@@ -10,17 +10,17 @@ import com.ice.emoji.model.Emoji
 
 class EmojiRcvAdapter(
     private val emojiItemSize: Float,
-    private val listener: EmojiListener?,
-    private val onEmojiClicked: (Emoji) -> Unit
+    private val listener: EmojiViewListener?,
+    private val onEmojiClicked: ((Emoji) -> Unit)?
 ) : ListAdapter<Emoji, EmojiRcvAdapter.EmojiViewHolder>(DiffCallback) {
 
     object DiffCallback : DiffUtil.ItemCallback<Emoji>() {
         override fun areItemsTheSame(oldItem: Emoji, newItem: Emoji): Boolean {
-            return oldItem.codes == newItem.codes
+            return oldItem.char == newItem.char
         }
 
         override fun areContentsTheSame(oldItem: Emoji, newItem: Emoji): Boolean {
-            return oldItem == newItem
+            return oldItem.char == newItem.char
         }
     }
 
@@ -32,7 +32,7 @@ class EmojiRcvAdapter(
             }
             binding.root.setOnClickListener {
                 listener?.onEmojiClick(item.char)
-                onEmojiClicked(item)
+                onEmojiClicked?.invoke(item)
             }
         }
     }

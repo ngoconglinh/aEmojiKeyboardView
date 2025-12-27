@@ -1,30 +1,30 @@
 [
     {
-        "merged": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-mergeDebugResources-35:\\layout\\activity_main.xml",
-        "source": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-main-38:\\layout\\activity_main.xml"
+        "merged": "com.ice.emoji-mergeDebugResources-31:/layout/fragment_emoji.xml",
+        "source": "com.ice.emoji-main-34:/layout/fragment_emoji.xml"
     },
     {
-        "merged": "com.ice.emoji-mergeDebugResources-35:/layout/layout_emoji_item.xml",
-        "source": "com.ice.emoji-main-38:/layout/layout_emoji_item.xml"
+        "merged": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-mergeDebugResources-31:\\layout\\layout_emoji_page.xml",
+        "source": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-main-34:\\layout\\layout_emoji_page.xml"
     },
     {
-        "merged": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-mergeDebugResources-35:\\layout\\item_loading.xml",
-        "source": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-main-38:\\layout\\item_loading.xml"
+        "merged": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-mergeDebugResources-31:\\layout\\layout_emoji_view.xml",
+        "source": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-main-34:\\layout\\layout_emoji_view.xml"
     },
     {
-        "merged": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-mergeDebugResources-35:\\layout\\layout_emoji_view.xml",
-        "source": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-main-38:\\layout\\layout_emoji_view.xml"
+        "merged": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-mergeDebugResources-31:\\layout\\layout_emoji_item.xml",
+        "source": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-main-34:\\layout\\layout_emoji_item.xml"
     },
     {
-        "merged": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-mergeDebugResources-35:\\layout\\layout_emoji_item.xml",
-        "source": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-main-38:\\layout\\layout_emoji_item.xml"
+        "merged": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-mergeDebugResources-31:\\layout\\layout_tab_item.xml",
+        "source": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-main-34:\\layout\\layout_tab_item.xml"
     },
     {
-        "merged": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-mergeDebugResources-35:\\layout\\layout_emoji_page.xml",
-        "source": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-main-38:\\layout\\layout_emoji_page.xml"
+        "merged": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-mergeDebugResources-31:\\layout\\activity_main.xml",
+        "source": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-main-34:\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-mergeDebugResources-35:\\layout\\layout_tab_item.xml",
-        "source": "D:\\Application\\AndroidSDK\\daemon\\9.0-milestone-1\\com.ice.emoji-main-38:\\layout\\layout_tab_item.xml"
+        "merged": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-mergeDebugResources-31:\\layout\\item_loading.xml",
+        "source": "D:\\Application\\AndroidSDK\\daemon\\8.13\\com.ice.emoji-main-34:\\layout\\item_loading.xml"
     }
 ]

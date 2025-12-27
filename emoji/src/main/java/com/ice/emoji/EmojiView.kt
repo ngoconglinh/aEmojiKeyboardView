@@ -2,7 +2,6 @@ package com.ice.emoji
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.os.Build
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
@@ -11,29 +10,26 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.withStyledAttributes
 import androidx.core.graphics.toColorInt
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.google.gson.Gson
+import com.ice.emoji.adapter.PageAdapter
 import com.ice.emoji.databinding.LayoutEmojiViewBinding
 import com.ice.emoji.databinding.LayoutTabItemBinding
-import com.ice.emoji.model.Emoji
-import com.ice.emoji.model.EmojiGroup
-import kotlinx.coroutines.Dispatchers
+import com.ice.emoji.repository.EmojiDataProvider
+import com.ice.emoji.repository.EmojiRepository
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 
 class EmojiView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : FrameLayout(context, attrs, defStyleAttr), EmojiListener {
+) : FrameLayout(context, attrs, defStyleAttr) {
 
     private val emojiBinding = LayoutEmojiViewBinding.inflate(LayoutInflater.from(context), this, true)
-    private val pageInitiated = MutableLiveData(0)
     private var emojiViewListener: EmojiViewListener? = null
     private var listTabIcon = listOf<Int>()
     private var tabBg: Int? = null
@@ -78,21 +74,20 @@ class EmojiView @JvmOverloads constructor(
         this.tabBg = bg
     }
 
-    private fun setupWithLifecycle(owner: LifecycleOwner) {
-        owner.lifecycleScope.launch(Dispatchers.IO) {
-            val fileInString: String = context.assets.open("emoji_data_2.json").bufferedReader().use { it.readText() }
-            val allEmoji = Gson().fromJson(fileInString, Array<Emoji>::class.java).toList()
-            val allEmojiByGroup = groupEmojisByGroup(allEmoji).toMutableList()
-            val recentGroup = EmojiGroup("Recent emoji", Recent.getStrTemplateRecent(context))
-            allEmojiByGroup.add(0, recentGroup)
-            withContext(Dispatchers.Main) {
-                val vpAdapter = EmojiVpAdapter(pageInitiated, colCount, emojiItemSize, owner, this@EmojiView, allEmojiByGroup)
-                emojiBinding.vpEmoji.apply {
-                    if (allEmojiByGroup.isNotEmpty()) offscreenPageLimit = allEmojiByGroup.size
-                    adapter = vpAdapter
-                }
-                initTab()
+    private var pageAdapter: PageAdapter? = null
+    private var dataProvider: EmojiDataProvider = EmojiRepository(context)
+    private fun setupWithLifecycle(owner: LifecycleOwner, fragmentActivity: FragmentActivity) {
+        pageAdapter = PageAdapter(emojiViewListener, emojiItemSize, dataProvider.emojiRecentStateFlow, onAddRecent = {
+            owner.lifecycleScope.launch {
+                dataProvider.setEmojiRecent(it)
             }
+        }, fragmentActivity)
+        emojiBinding.vpEmoji.adapter = pageAdapter
+        owner.lifecycleScope.launch {
+            val allEmojiByGroup = dataProvider.getEmojiGroupData()
+            if (allEmojiByGroup.isNotEmpty()) emojiBinding.vpEmoji.offscreenPageLimit = allEmojiByGroup.size
+            pageAdapter?.submitPage(allEmojiByGroup)
+            initTab()
         }
     }
 
@@ -159,19 +154,8 @@ class EmojiView @JvmOverloads constructor(
         emojiBinding.ivShare.imageTintList = tabColor
     }
 
-    private fun groupEmojisByGroup(emojis: List<Emoji>): List<EmojiGroup> {
-        return emojis.groupBy { it.group }
-            .map { (groupName, emojiList) ->
-                EmojiGroup(group = groupName, listEmoji = emojiList)
-            }
-    }
-
     private fun emojiViewListener(emojiViewListener: EmojiViewListener) {
         this.emojiViewListener = emojiViewListener
-    }
-
-    override fun onEmojiClick(s: String) {
-        emojiViewListener?.onEmojiClick(s)
     }
 
     class EmojiViewBuilder(private val emojiView: EmojiView) {
@@ -196,8 +180,8 @@ class EmojiView @JvmOverloads constructor(
         }
 
         class EmojiViewBuilderFinal(private val emojiView: EmojiView) {
-            fun setupWithLifecycle(owner: LifecycleOwner) {
-                emojiView.setupWithLifecycle(owner)
+            fun setupWithLifecycle(owner: LifecycleOwner, fragmentActivity: FragmentActivity) {
+                emojiView.setupWithLifecycle(owner, fragmentActivity)
             }
         }
     }

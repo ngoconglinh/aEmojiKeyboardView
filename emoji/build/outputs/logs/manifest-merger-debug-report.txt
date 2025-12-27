@@ -1,16 +1,290 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:2:1-4:12
-INJECTED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:2:1-4:12
+ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:2:1-24:12
+MERGED from [androidx.databinding:viewbinding:8.7.2] D:\Application\AndroidSDK\caches\8.13\transforms\3b587dc71196642fe1361dd38af02a39\transformed\viewbinding-8.7.2\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.12.0] D:\Application\AndroidSDK\caches\8.13\transforms\6acdffec82b4db93fdb8259163202ab6\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\Application\AndroidSDK\caches\8.13\transforms\a913d3262efb0e3999d2353a1bb2546c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] D:\Application\AndroidSDK\caches\8.13\transforms\83588224f5bd7c309352ab0f1952b474\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat:1.7.1] D:\Application\AndroidSDK\caches\8.13\transforms\57e2aed7b68d8e42c93aa113a71cc710\transformed\appcompat-1.7.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\4cab52e2dad78b8dc0f9f807328521a5\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.5.4] D:\Application\AndroidSDK\caches\8.13\transforms\7c122d584bbef5f1bf74a53f9242a6bf\transformed\fragment-1.5.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.10.1] D:\Application\AndroidSDK\caches\8.13\transforms\811d3371ea9e833e8fe4aee07fd36bcc\transformed\activity-1.10.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] D:\Application\AndroidSDK\caches\8.13\transforms\21b2be41131f192de07c00d3667dc980\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\f030bcfe20060ae6efd1a62c318fc20a\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.transition:transition:1.5.0] D:\Application\AndroidSDK\caches\8.13\transforms\82580936c32fc0838185a801f5783547\transformed\transition-1.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\ed537556f374bf233743c6b5310547f9\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\d3eb4ee6710cb5c7cd61da7b46f6c08b\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\770d9fa41c54c658373a0b4da660a0eb\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\011e184a54750f2cab6b8bce5a5d3f3d\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\a0e037bd7729ae31b3be23f78af860a7\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\9993b6934221ef2cd0e9616e775a2c94\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\35373931a9c4094991f89b1ab3aa6273\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\a91abd0dd31809209ca7e8d28addbb6d\transformed\lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\922f2468ddc60a81095296022b91e015\transformed\core-ktx-1.13.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\cdc8038a9fca4b71bff70a2e7d7f462e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\ab39d292e5635e4f47a05205df28b116\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\ff4467060e3dfd2a6468777b5a8a721b\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\73f566f641fbdea323c58ef129cafc61\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\3cb560b8cc9cc8e0bef4ad3e4e383d77\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\f7e7a564d230727d71881bcf2b8271b1\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\1deb35981d58ca8ee71f48aeb6937c2c\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.core:core-viewtree:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\7504e199ff73dff225284dcb2eaebdbf\transformed\core-viewtree-1.0.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\d7bfa94ac74d652b726d2ae12dd13be3\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\824243f7b37259098b096372527a8ed3\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\52519e33c4de6745c25e92cef8940a83\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\2fd8b366baa9ffad7b32d428fa91db10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\e9c4d6ca1ba9be59e7e797c3f13054bd\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\fcd6ddf733b03c5ebd273f99893396b3\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\b5a87f4d5b235b3834f2fecf0f5cf5a3\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] D:\Application\AndroidSDK\caches\8.13\transforms\9e0033384b624dd6333d96bb87b89c36\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\6e950d575d619dcea04f1c27dfbc1895\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\a0fc2a001b34b80dbf732461e796504f\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\360f6a7169cff7ff1f0e852387ab8308\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 	package
 		INJECTED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:4:5-22:19
+INJECTED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:4:5-22:19
+MERGED from [com.google.android.material:material:1.12.0] D:\Application\AndroidSDK\caches\8.13\transforms\6acdffec82b4db93fdb8259163202ab6\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.12.0] D:\Application\AndroidSDK\caches\8.13\transforms\6acdffec82b4db93fdb8259163202ab6\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\Application\AndroidSDK\caches\8.13\transforms\a913d3262efb0e3999d2353a1bb2546c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\Application\AndroidSDK\caches\8.13\transforms\a913d3262efb0e3999d2353a1bb2546c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\2fd8b366baa9ffad7b32d428fa91db10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\2fd8b366baa9ffad7b32d428fa91db10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\b5a87f4d5b235b3834f2fecf0f5cf5a3\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\b5a87f4d5b235b3834f2fecf0f5cf5a3\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:11:9-35
+	android:label
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:9:9-30
+	android:fullBackupContent
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:7:9-54
+	android:roundIcon
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:10:9-62
+	android:icon
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:8:9-57
+	android:allowBackup
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:5:9-35
+	android:theme
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:12:9-42
+	android:dataExtractionRules
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:6:9-65
+activity#com.ice.emoji.MainActivity
+ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:13:9-21:20
+	android:exported
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:15:13-36
+	android:name
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:14:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:16:13-20:29
+action#android.intent.action.MAIN
+ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml:19:27-74
 uses-sdk
 INJECTED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml
 INJECTED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:8.7.2] D:\Application\AndroidSDK\caches\8.13\transforms\3b587dc71196642fe1361dd38af02a39\transformed\viewbinding-8.7.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.7.2] D:\Application\AndroidSDK\caches\8.13\transforms\3b587dc71196642fe1361dd38af02a39\transformed\viewbinding-8.7.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.12.0] D:\Application\AndroidSDK\caches\8.13\transforms\6acdffec82b4db93fdb8259163202ab6\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.12.0] D:\Application\AndroidSDK\caches\8.13\transforms\6acdffec82b4db93fdb8259163202ab6\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\Application\AndroidSDK\caches\8.13\transforms\a913d3262efb0e3999d2353a1bb2546c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\Application\AndroidSDK\caches\8.13\transforms\a913d3262efb0e3999d2353a1bb2546c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] D:\Application\AndroidSDK\caches\8.13\transforms\83588224f5bd7c309352ab0f1952b474\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] D:\Application\AndroidSDK\caches\8.13\transforms\83588224f5bd7c309352ab0f1952b474\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.1] D:\Application\AndroidSDK\caches\8.13\transforms\57e2aed7b68d8e42c93aa113a71cc710\transformed\appcompat-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.1] D:\Application\AndroidSDK\caches\8.13\transforms\57e2aed7b68d8e42c93aa113a71cc710\transformed\appcompat-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\4cab52e2dad78b8dc0f9f807328521a5\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\4cab52e2dad78b8dc0f9f807328521a5\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] D:\Application\AndroidSDK\caches\8.13\transforms\7c122d584bbef5f1bf74a53f9242a6bf\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] D:\Application\AndroidSDK\caches\8.13\transforms\7c122d584bbef5f1bf74a53f9242a6bf\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.10.1] D:\Application\AndroidSDK\caches\8.13\transforms\811d3371ea9e833e8fe4aee07fd36bcc\transformed\activity-1.10.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.10.1] D:\Application\AndroidSDK\caches\8.13\transforms\811d3371ea9e833e8fe4aee07fd36bcc\transformed\activity-1.10.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] D:\Application\AndroidSDK\caches\8.13\transforms\21b2be41131f192de07c00d3667dc980\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] D:\Application\AndroidSDK\caches\8.13\transforms\21b2be41131f192de07c00d3667dc980\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\f030bcfe20060ae6efd1a62c318fc20a\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\f030bcfe20060ae6efd1a62c318fc20a\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.transition:transition:1.5.0] D:\Application\AndroidSDK\caches\8.13\transforms\82580936c32fc0838185a801f5783547\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.5.0] D:\Application\AndroidSDK\caches\8.13\transforms\82580936c32fc0838185a801f5783547\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\ed537556f374bf233743c6b5310547f9\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\ed537556f374bf233743c6b5310547f9\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\d3eb4ee6710cb5c7cd61da7b46f6c08b\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\d3eb4ee6710cb5c7cd61da7b46f6c08b\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\770d9fa41c54c658373a0b4da660a0eb\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\770d9fa41c54c658373a0b4da660a0eb\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\011e184a54750f2cab6b8bce5a5d3f3d\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\011e184a54750f2cab6b8bce5a5d3f3d\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\a0e037bd7729ae31b3be23f78af860a7\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\a0e037bd7729ae31b3be23f78af860a7\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\9993b6934221ef2cd0e9616e775a2c94\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\9993b6934221ef2cd0e9616e775a2c94\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\35373931a9c4094991f89b1ab3aa6273\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\35373931a9c4094991f89b1ab3aa6273\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\a91abd0dd31809209ca7e8d28addbb6d\transformed\lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\a91abd0dd31809209ca7e8d28addbb6d\transformed\lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\922f2468ddc60a81095296022b91e015\transformed\core-ktx-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\922f2468ddc60a81095296022b91e015\transformed\core-ktx-1.13.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\cdc8038a9fca4b71bff70a2e7d7f462e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\cdc8038a9fca4b71bff70a2e7d7f462e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\ab39d292e5635e4f47a05205df28b116\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\ab39d292e5635e4f47a05205df28b116\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\ff4467060e3dfd2a6468777b5a8a721b\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\ff4467060e3dfd2a6468777b5a8a721b\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\73f566f641fbdea323c58ef129cafc61\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\73f566f641fbdea323c58ef129cafc61\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\3cb560b8cc9cc8e0bef4ad3e4e383d77\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\3cb560b8cc9cc8e0bef4ad3e4e383d77\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\f7e7a564d230727d71881bcf2b8271b1\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\f7e7a564d230727d71881bcf2b8271b1\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\1deb35981d58ca8ee71f48aeb6937c2c\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] D:\Application\AndroidSDK\caches\8.13\transforms\1deb35981d58ca8ee71f48aeb6937c2c\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\7504e199ff73dff225284dcb2eaebdbf\transformed\core-viewtree-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\7504e199ff73dff225284dcb2eaebdbf\transformed\core-viewtree-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\d7bfa94ac74d652b726d2ae12dd13be3\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\d7bfa94ac74d652b726d2ae12dd13be3\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\824243f7b37259098b096372527a8ed3\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\824243f7b37259098b096372527a8ed3\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\52519e33c4de6745c25e92cef8940a83\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\52519e33c4de6745c25e92cef8940a83\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\2fd8b366baa9ffad7b32d428fa91db10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\2fd8b366baa9ffad7b32d428fa91db10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\e9c4d6ca1ba9be59e7e797c3f13054bd\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\e9c4d6ca1ba9be59e7e797c3f13054bd\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\fcd6ddf733b03c5ebd273f99893396b3\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\fcd6ddf733b03c5ebd273f99893396b3\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\b5a87f4d5b235b3834f2fecf0f5cf5a3\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\b5a87f4d5b235b3834f2fecf0f5cf5a3\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] D:\Application\AndroidSDK\caches\8.13\transforms\9e0033384b624dd6333d96bb87b89c36\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] D:\Application\AndroidSDK\caches\8.13\transforms\9e0033384b624dd6333d96bb87b89c36\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\6e950d575d619dcea04f1c27dfbc1895\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\6e950d575d619dcea04f1c27dfbc1895\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\a0fc2a001b34b80dbf732461e796504f\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\a0fc2a001b34b80dbf732461e796504f\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\360f6a7169cff7ff1f0e852387ab8308\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] D:\Application\AndroidSDK\caches\8.13\transforms\360f6a7169cff7ff1f0e852387ab8308\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
 		INJECTED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from E:\TestApp\aEmojiKeyboard\emoji\src\main\AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\2fd8b366baa9ffad7b32d428fa91db10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] D:\Application\AndroidSDK\caches\8.13\transforms\2fd8b366baa9ffad7b32d428fa91db10\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] D:\Application\AndroidSDK\caches\8.13\transforms\44a84444ea02edbc30ea715e6ed9e25f\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] D:\Application\AndroidSDK\caches\8.13\transforms\31c3aa75a6a63b8020aedb12a376c9db\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+permission#com.ice.emoji.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+uses-permission#com.ice.emoji.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.0] D:\Application\AndroidSDK\caches\8.13\transforms\5dd8f7409c63211822b5142af1ac2412\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] D:\Application\AndroidSDK\caches\8.13\transforms\5df7d2e8ba0427f03a56383861040cbb\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92

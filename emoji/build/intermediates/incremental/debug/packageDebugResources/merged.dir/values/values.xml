@@ -18,9 +18,15 @@
         <item>@font/poppins</item>
     </array>
     <dimen name="tabItemPadding">4dp</dimen>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="txt_no_emoji_recently">No Emoji recently</string>
     <string name="txt_share">Share</string>
     <string name="txt_tab_icon">Tab icon</string>
+    <style name="Base.Theme.Base" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Base" parent="Base.Theme.Base"/>
     <declare-styleable name="EmojiView">
         <attr format="integer" name="evColumCount"/>
         <attr format="dimension" name="evSize"/>
