@@ -2,6 +2,7 @@ package com.ice.emoji.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ListAdapter
@@ -55,6 +56,7 @@ class EmojiVpAdapter(
             scope.launch {
                 recentEmojiFlow.collect { list ->
                     binding.loadingView.visibility = View.GONE
+                    binding.llEmpty.isVisible = list.isEmpty()
                     rcvAdapter.submitList(list)
                 }
             }
@@ -74,8 +76,8 @@ class EmojiVpAdapter(
 
             scope.launch {
                 state.data.collect { list ->
-                    binding.loadingView.visibility =
-                        if (list.isEmpty()) View.VISIBLE else View.GONE
+                    binding.loadingView.visibility = View.GONE
+                    binding.llEmpty.isVisible = list.isEmpty()
                     rcvAdapter.submitList(list)
                 }
             }
