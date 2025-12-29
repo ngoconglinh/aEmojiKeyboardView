@@ -1,15 +1,15 @@
 plugins {
     id 'com.android.library'
-//    id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
 }
+
 android {
     namespace 'com.ice.emoji'
     compileSdk 35
 
     defaultConfig {
-        minSdk 26
+        minSdk 24
         targetSdk 35
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -19,13 +19,16 @@ android {
             minifyEnabled false
         }
     }
+
     buildFeatures {
         viewBinding = true
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = '11'
     }
@@ -39,23 +42,20 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'com.google.android.material:material:1.12.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
-
-    //gson
+    implementation 'com.google.android.material:material:1.13.0'
     implementation 'com.google.code.gson:gson:2.8.8'
 }
 
-publishing {
-    publications {
-        release(MavenPublication) {
-            afterEvaluate {
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
                 from components.release
+                groupId = "com.github.ngoconglinh"
+                artifactId = "aEmojiKeyboardView"
+                version = "1.4.2"
             }
         }
     }

@@ -10,16 +10,14 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.withStyledAttributes
 import androidx.core.graphics.toColorInt
-import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.lifecycleScope
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.ice.emoji.adapter.PageAdapter
+import com.ice.emoji.adapter.EmojiVpAdapter
 import com.ice.emoji.databinding.LayoutEmojiViewBinding
 import com.ice.emoji.databinding.LayoutTabItemBinding
 import com.ice.emoji.repository.EmojiDataProvider
 import com.ice.emoji.repository.EmojiRepository
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 
@@ -74,20 +72,29 @@ class EmojiView @JvmOverloads constructor(
         this.tabBg = bg
     }
 
-    private var pageAdapter: PageAdapter? = null
+    private var pageAdapter: EmojiVpAdapter? = null
     private var dataProvider: EmojiDataProvider = EmojiRepository(context)
-    private fun setupWithLifecycle(owner: LifecycleOwner, fragmentActivity: FragmentActivity) {
-        pageAdapter = PageAdapter(emojiViewListener, emojiItemSize, dataProvider.emojiRecentStateFlow, onAddRecent = {
-            owner.lifecycleScope.launch {
-                dataProvider.setEmojiRecent(it)
+    private fun setupWithLifecycle(scope: CoroutineScope) {
+        pageAdapter = EmojiVpAdapter(
+            scope = scope,
+            listener = emojiViewListener,
+            recentEmojiFlow = dataProvider.emojiRecentStateFlow,
+            emojiItemSize = emojiItemSize,
+            onEmojiClicked = {
+                scope.launch {
+                    dataProvider.setEmojiRecent(it)
+                }
             }
-        }, fragmentActivity)
+        )
+
         emojiBinding.vpEmoji.adapter = pageAdapter
-        owner.lifecycleScope.launch {
-            val allEmojiByGroup = dataProvider.getEmojiGroupData()
-            if (allEmojiByGroup.isNotEmpty()) emojiBinding.vpEmoji.offscreenPageLimit = allEmojiByGroup.size
-            pageAdapter?.submitPage(allEmojiByGroup)
-            initTab()
+
+        scope.launch {
+            val data = dataProvider.getEmojiGroupData()
+            emojiBinding.vpEmoji.post {
+                pageAdapter?.submitList(data)
+                initTab()
+            }
         }
     }
 
@@ -180,8 +187,8 @@ class EmojiView @JvmOverloads constructor(
         }
 
         class EmojiViewBuilderFinal(private val emojiView: EmojiView) {
-            fun setupWithLifecycle(owner: LifecycleOwner, fragmentActivity: FragmentActivity) {
-                emojiView.setupWithLifecycle(owner, fragmentActivity)
+            fun setupWithLifecycle(scope: CoroutineScope) {
+                emojiView.setupWithLifecycle(scope)
             }
         }
     }
