@@ -40,6 +40,7 @@ class EmojiView @JvmOverloads constructor(
     private var emojiViewListener: EmojiViewListener? = null
     private var listTabIcon = listOf<Int>()
     private var tabBg: Int? = null
+    private var initTabIndex = 0
 
     private var colCount = 7
     private var emojiItemSize = 23f
@@ -128,6 +129,17 @@ class EmojiView @JvmOverloads constructor(
         refreshTabStyles()
     }
 
+    fun setSelectedTab(index: Int, smoothScroll: Boolean) {
+        if (emojiBinding.vpEmoji.currentItem == index) return
+        try {
+            emojiBinding.vpEmoji.post {
+                emojiBinding.vpEmoji.setCurrentItem(index, smoothScroll)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
     private fun buildColorStateList(selected: Int, unselected: Int): ColorStateList {
         val states = arrayOf(
             intArrayOf(android.R.attr.state_selected),
@@ -192,6 +204,8 @@ class EmojiView @JvmOverloads constructor(
             })
 
             ivShare.setOnClickListener { emojiViewListener?.onShare() }
+
+            setSelectedTab(initTabIndex, false)
         }
     }
 
@@ -199,6 +213,7 @@ class EmojiView @JvmOverloads constructor(
         fun setTabIcon(icons: List<Int>) = apply { view.listTabIcon = icons }
         fun setTabBackground(bg: Int) = apply { view.tabBg = bg }
         fun setListener(listener: EmojiViewListener) = apply { view.emojiViewListener = listener }
+        fun setInitTabIndex(index: Int) = apply { view.initTabIndex = index }
         fun setup() { view.setupInternal() }
     }
 }

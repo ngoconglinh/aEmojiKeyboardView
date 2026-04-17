@@ -52,6 +52,9 @@ class MainActivity : AppCompatActivity() {
 
                 }
             })
+            .setInitTabIndex(1)
             .setup()
+
+
     }
 }
