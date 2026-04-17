@@ -1,27 +1,31 @@
 package com.ice.emoji.model
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.withContext
 
 private const val PAGE_SIZE = 21
 
 class EmojiPageState(
-    val source: List<Emoji>
+    private val source: List<Emoji>
 ) {
     val data = MutableStateFlow<List<Emoji>>(emptyList())
-    var isLoading = false
+    private var isLoading = false
 
-    fun loadMore(size: Int = PAGE_SIZE) {
-        if (isLoading) return
+    suspend fun loadMore(size: Int = PAGE_SIZE) = withContext(Dispatchers.Default) {
+        if (isLoading) return@withContext
         val current = data.value
-        if (current.size >= source.size) return
+        if (current.size >= source.size) return@withContext
 
         isLoading = true
+        try {
+            val next = source
+                .drop(current.size)
+                .take(size)
 
-        val next = source
-            .drop(current.size)
-            .take(size)
-
-        data.value = current + next
-        isLoading = false
+            data.value = current + next
+        } finally {
+            isLoading = false
+        }
     }
 }

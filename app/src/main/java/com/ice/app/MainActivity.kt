@@ -5,7 +5,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.lifecycleScope
 import com.ice.app.databinding.ActivityMainBinding
 import com.ice.emoji.EmojiView
 import com.ice.emoji.EmojiViewListener
@@ -44,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         EmojiView.EmojiViewBuilder(bd.emoji)
             .setTabIcon(tabIcon)
             .setTabBackground(R.drawable.ic_launcher_background)
-            .emojiViewListener(object: EmojiViewListener {
+            .setListener(object: EmojiViewListener {
                 override fun onEmojiClick(emoji: String) {
 
                 }
@@ -53,6 +52,6 @@ class MainActivity : AppCompatActivity() {
 
                 }
             })
-            .setupWithLifecycle(this.lifecycleScope)
+            .setup()
     }
 }

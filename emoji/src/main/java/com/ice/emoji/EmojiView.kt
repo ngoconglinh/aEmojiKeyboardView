@@ -2,6 +2,7 @@ package com.ice.emoji
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
@@ -9,7 +10,11 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.withStyledAttributes
-import androidx.core.graphics.toColorInt
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LifecycleRegistry
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.ice.emoji.adapter.EmojiVpAdapter
@@ -17,16 +22,20 @@ import com.ice.emoji.databinding.LayoutEmojiViewBinding
 import com.ice.emoji.databinding.LayoutTabItemBinding
 import com.ice.emoji.repository.EmojiDataProvider
 import com.ice.emoji.repository.EmojiRepository
-import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 class EmojiView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : FrameLayout(context, attrs, defStyleAttr) {
+) : FrameLayout(context, attrs, defStyleAttr), LifecycleOwner {
 
+    private val lifecycleRegistry = LifecycleRegistry(this)
+    override val lifecycle: Lifecycle get() = lifecycleRegistry
+    
     private val emojiBinding = LayoutEmojiViewBinding.inflate(LayoutInflater.from(context), this, true)
     private var emojiViewListener: EmojiViewListener? = null
     private var listTabIcon = listOf<Int>()
@@ -36,161 +45,160 @@ class EmojiView @JvmOverloads constructor(
     private var emojiItemSize = 23f
     private var tabSize = 23f
     private var tabItemPadding = 20f
-    private var tabColor: ColorStateList
-    private var tabBgColor: ColorStateList
+    
+    private var tabColor: ColorStateList? = null
+    private var tabBgColor: ColorStateList? = null
+
+    private var pageAdapter: EmojiVpAdapter? = null
+    private val dataProvider: EmojiDataProvider by lazy { EmojiRepository(context) }
+    private var tabLayoutMediator: TabLayoutMediator? = null
 
     init {
-        var tabSelectedColor = "#ffffff".toColorInt()
-        var tabUnSelectedColor = "#000000".toColorInt()
-        var tabBgSelectedColor = "#00000000".toColorInt()
-        getContext().withStyledAttributes(attrs, R.styleable.EmojiView) {
+        lifecycleRegistry.currentState = Lifecycle.State.CREATED
+        
+        var selectedColor = Color.WHITE
+        var unselectedColor = Color.BLACK
+        var selectedBg = Color.TRANSPARENT
+
+        context.withStyledAttributes(attrs, R.styleable.EmojiView) {
             colCount = getInteger(R.styleable.EmojiView_evColumCount, 7)
             emojiItemSize = getDimensionPixelSize(R.styleable.EmojiView_evSize, 23).toFloat()
             tabSize = getDimensionPixelSize(R.styleable.EmojiView_evTabSize, 23).toFloat()
             tabItemPadding = getDimensionPixelSize(R.styleable.EmojiView_evTabMarginEnd, 23).toFloat()
-            tabSelectedColor = getColor(R.styleable.EmojiView_evTabSelectedColor, tabSelectedColor)
-            tabUnSelectedColor = getColor(R.styleable.EmojiView_evTabColor, tabUnSelectedColor)
-            tabBgSelectedColor = getColor(R.styleable.EmojiView_evTabBgColor, tabBgSelectedColor)
+            selectedColor = getColor(R.styleable.EmojiView_evTabSelectedColor, selectedColor)
+            unselectedColor = getColor(R.styleable.EmojiView_evTabColor, unselectedColor)
+            selectedBg = getColor(R.styleable.EmojiView_evTabBgColor, selectedBg)
         }
 
-        val states = arrayOf<IntArray?>(
-            intArrayOf(android.R.attr.state_selected),
-            intArrayOf(-android.R.attr.state_selected)
-        )
+        tabColor = buildColorStateList(selectedColor, unselectedColor)
+        tabBgColor = buildColorStateList(selectedBg, Color.TRANSPARENT)
 
-        val colors = intArrayOf(tabSelectedColor, tabUnSelectedColor)
-        val colorsBg = intArrayOf(tabBgSelectedColor, "#00000000".toColorInt())
-        tabColor = ColorStateList(states, colors)
-        tabBgColor = ColorStateList(states, colorsBg)
+        configureViewPager()
     }
 
-    private fun setTabIcon(listIcon: List<Int>) {
-        this.listTabIcon = listIcon
+    private fun configureViewPager() {
+        emojiBinding.vpEmoji.apply {
+            offscreenPageLimit = 1
+            (getChildAt(0) as? RecyclerView)?.apply {
+                setItemViewCacheSize(5)
+                setHasFixedSize(true)
+            }
+        }
     }
 
-    private fun setTabBackground(bg: Int) {
-        this.tabBg = bg
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        lifecycleRegistry.currentState = Lifecycle.State.STARTED
+        lifecycleRegistry.currentState = Lifecycle.State.RESUMED
     }
 
-    private var pageAdapter: EmojiVpAdapter? = null
-    private var dataProvider: EmojiDataProvider = EmojiRepository(context)
-    private fun setupWithLifecycle(scope: CoroutineScope) {
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        lifecycleRegistry.currentState = Lifecycle.State.DESTROYED
+    }
+
+    private fun setupInternal() {
+        if (pageAdapter != null) return
+
         pageAdapter = EmojiVpAdapter(
-            scope = scope,
+            scope = lifecycleScope,
             listener = emojiViewListener,
             recentEmojiFlow = dataProvider.emojiRecentStateFlow,
             emojiItemSize = emojiItemSize,
-            onEmojiClicked = {
-                scope.launch {
-                    dataProvider.setEmojiRecent(it)
+            onEmojiClicked = { emoji ->
+                lifecycleScope.launch(Dispatchers.IO) {
+                    dataProvider.setEmojiRecent(emoji)
                 }
             }
-        )
+        ).also { emojiBinding.vpEmoji.adapter = it }
 
-        emojiBinding.vpEmoji.adapter = pageAdapter
-
-        scope.launch {
+        lifecycleScope.launch {
             val data = dataProvider.getEmojiGroupData()
-            emojiBinding.vpEmoji.post {
-                pageAdapter?.submitList(data)
-                initTab()
+            withContext(Dispatchers.Main) {
+                pageAdapter?.submitList(data) {
+                    if (tabLayoutMediator == null) initTab()
+                }
+            }
+        }
+    }
+
+    fun setTabColorTint(selectedColor: Int, unselectedColor: Int, selectedBgColor: Int) {
+        tabColor = buildColorStateList(selectedColor, unselectedColor)
+        tabBgColor = buildColorStateList(selectedBgColor, Color.TRANSPARENT)
+        refreshTabStyles()
+    }
+
+    private fun buildColorStateList(selected: Int, unselected: Int): ColorStateList {
+        val states = arrayOf(
+            intArrayOf(android.R.attr.state_selected),
+            intArrayOf(-android.R.attr.state_selected)
+        )
+        val colors = intArrayOf(selected, unselected)
+        return ColorStateList(states, colors)
+    }
+
+    private fun refreshTabStyles() {
+        with(emojiBinding) {
+            viewLine.backgroundTintList = tabColor
+            ivShare.imageTintList = tabColor
+            
+            repeat(tabEmojiCategory.tabCount) { index ->
+                tabEmojiCategory.getTabAt(index)?.customView?.let { view ->
+                    view.findViewById<ImageView>(R.id.ivTabIcon)?.apply {
+                        imageTintList = tabColor
+                        background?.setTintList(tabBgColor)
+                    }
+                }
             }
         }
     }
 
     private fun initTab() {
         val params = LinearLayout.LayoutParams(tabSize.toInt() + tabItemPadding.toInt(), tabSize.toInt())
+        val inflater = LayoutInflater.from(context)
 
-        emojiBinding.ivShare.layoutParams = params
-        emojiBinding.flLine.layoutParams = LinearLayout.LayoutParams((tabSize  * 0.7).toInt(), tabSize.toInt())
-        emojiBinding.viewLine.backgroundTintList = tabColor
-        TabLayoutMediator(
-            emojiBinding.tabEmojiCategory,
-            emojiBinding.vpEmoji
-        ) { tab, position ->
-            val tabBinding = LayoutTabItemBinding.inflate(LayoutInflater.from(context), null, false)
-            val icon = try {
-                listTabIcon[position]
-            } catch (_: IndexOutOfBoundsException) {
-                null
-            }
-            icon?.let { tabBinding.ivTabIcon.setImageResource(icon) }
-            tabBg?.let {
-                tabBinding.ivTabIcon.background = ContextCompat.getDrawable(context, it)
-                tabBinding.ivTabIcon.background.setTintList(tabBgColor)
-            }
-            tabBinding.ivTabIcon.imageTintList = tabColor
-            tab.customView = tabBinding.root
-            tab.customView?.layoutParams = params
-        }.attach()
+        with(emojiBinding) {
+            ivShare.layoutParams = params
+            flLine.layoutParams = LinearLayout.LayoutParams((tabSize * 0.7).toInt(), tabSize.toInt())
+            viewLine.backgroundTintList = tabColor
+            
+            tabLayoutMediator?.detach()
+            tabLayoutMediator = TabLayoutMediator(
+                tabEmojiCategory,
+                vpEmoji,
+                true,
+                false
+            ) { tab, position ->
+                val tabBinding = LayoutTabItemBinding.inflate(inflater, null, false)
+                listTabIcon.getOrNull(position)?.let { tabBinding.ivTabIcon.setImageResource(it) }
+                
+                tabBg?.let {
+                    tabBinding.ivTabIcon.background = ContextCompat.getDrawable(context, it)
+                    tabBinding.ivTabIcon.background?.setTintList(tabBgColor)
+                }
+                
+                tabBinding.ivTabIcon.imageTintList = tabColor
+                tab.customView = tabBinding.root.apply { layoutParams = params }
+            }.apply { attach() }
 
-        emojiBinding.tabEmojiCategory.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{
-            override fun onTabSelected(p0: TabLayout.Tab?) {
-                p0?.customView?.findViewById<ImageView>(R.id.ivTabIcon)?.isSelected = true
-            }
+            tabEmojiCategory.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+                override fun onTabSelected(tab: TabLayout.Tab?) {
+                    tab?.customView?.findViewById<ImageView>(R.id.ivTabIcon)?.isSelected = true
+                }
+                override fun onTabUnselected(tab: TabLayout.Tab?) {
+                    tab?.customView?.findViewById<ImageView>(R.id.ivTabIcon)?.isSelected = false
+                }
+                override fun onTabReselected(tab: TabLayout.Tab?) {}
+            })
 
-            override fun onTabUnselected(p0: TabLayout.Tab?) {
-                p0?.customView?.findViewById<ImageView>(R.id.ivTabIcon)?.isSelected = false
-            }
-
-            override fun onTabReselected(p0: TabLayout.Tab?) {}
-        })
-
-        emojiBinding.ivShare.setOnClickListener {
-            emojiViewListener?.onShare()
+            ivShare.setOnClickListener { emojiViewListener?.onShare() }
         }
     }
 
-    fun setTabColorTint(tabSelectedColor: Int, tabUnSelectedColor: Int, bgSelectedColor: Int) {
-        val colors = intArrayOf(tabSelectedColor, tabUnSelectedColor)
-        val states = arrayOf<IntArray?>(
-            intArrayOf(android.R.attr.state_selected),
-            intArrayOf(-android.R.attr.state_selected)
-        )
-
-        tabColor = ColorStateList(states, colors)
-        val colorsBg = intArrayOf(bgSelectedColor, "#00000000".toColorInt())
-        tabBgColor = ColorStateList(states, colorsBg)
-        for (i in 0..emojiBinding.tabEmojiCategory.tabCount) {
-            val customView = emojiBinding.tabEmojiCategory.getTabAt(i)?.customView
-            val ivTabIcon = customView?.findViewById<ImageView>(R.id.ivTabIcon)
-            ivTabIcon?.imageTintList = tabColor
-            ivTabIcon?.background?.setTintList(tabBgColor)
-        }
-        emojiBinding.viewLine.backgroundTintList = tabColor
-        emojiBinding.ivShare.imageTintList = tabColor
+    class EmojiViewBuilder(private val view: EmojiView) {
+        fun setTabIcon(icons: List<Int>) = apply { view.listTabIcon = icons }
+        fun setTabBackground(bg: Int) = apply { view.tabBg = bg }
+        fun setListener(listener: EmojiViewListener) = apply { view.emojiViewListener = listener }
+        fun setup() { view.setupInternal() }
     }
-
-    private fun emojiViewListener(emojiViewListener: EmojiViewListener) {
-        this.emojiViewListener = emojiViewListener
-    }
-
-    class EmojiViewBuilder(private val emojiView: EmojiView) {
-
-        fun setTabIcon(listIcon: List<Int>): EmojiViewBuilderTabBg {
-            emojiView.setTabIcon(listIcon)
-            return EmojiViewBuilderTabBg(emojiView)
-        }
-
-        class EmojiViewBuilderTabBg(private val emojiView: EmojiView) {
-            fun setTabBackground(bg: Int): EmojiViewBuilderListener {
-                emojiView.setTabBackground(bg)
-                return EmojiViewBuilderListener(emojiView)
-            }
-        }
-
-        class EmojiViewBuilderListener(private val emojiView: EmojiView) {
-            fun emojiViewListener(listener: EmojiViewListener): EmojiViewBuilderFinal {
-                emojiView.emojiViewListener(listener)
-                return EmojiViewBuilderFinal(emojiView)
-            }
-        }
-
-        class EmojiViewBuilderFinal(private val emojiView: EmojiView) {
-            fun setupWithLifecycle(scope: CoroutineScope) {
-                emojiView.setupWithLifecycle(scope)
-            }
-        }
-    }
-
 }

@@ -1,4 +1,5 @@
 package com.ice.emoji.adapter
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ import com.ice.emoji.databinding.LayoutEmojiPageBinding
 import com.ice.emoji.model.Emoji
 import com.ice.emoji.model.EmojiGroup
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
@@ -26,18 +28,40 @@ class EmojiVpAdapter(
 ) : ListAdapter<EmojiGroup, EmojiVpAdapter.ViewHolder>(DiffCallback) {
 
     private val pageStates = mutableMapOf<Int, EmojiPageState>()
+    private val sharedPool = RecyclerView.RecycledViewPool().apply {
+        // Tối ưu: Emoji thường có số lượng lớn trên màn hình, tăng pool size giúp scroll mượt hơn
+        setMaxRecycledViews(0, 60)
+    }
 
     inner class ViewHolder(
         private val binding: LayoutEmojiPageBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         private val rcvAdapter = EmojiRcvAdapter(emojiItemSize, listener, onEmojiClicked)
+        private var collectJob: Job? = null
+        private var currentState: EmojiPageState? = null
 
         init {
             binding.rcvEmoji.apply {
                 adapter = rcvAdapter
                 itemAnimator = null
                 setHasFixedSize(true)
+                setRecycledViewPool(sharedPool)
+                setItemViewCacheSize(10)
+                
+                // Tối ưu: Chỉ thêm listener một lần duy nhất
+                addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                    override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                        if (dy <= 0) return
+                        val lm = recyclerView.layoutManager as? GridLayoutManager ?: return
+                        val last = lm.findLastVisibleItemPosition()
+                        if (last >= rcvAdapter.itemCount - 5) { // Load trước khi chạm đáy
+                            currentState?.let { state ->
+                                scope.launch { state.loadMore() }
+                            }
+                        }
+                    }
+                })
             }
         }
 
@@ -45,7 +69,9 @@ class EmojiVpAdapter(
             group: EmojiGroup,
             pagePos: Int
         ) {
+            collectJob?.cancel()
             if (pagePos == 0) {
+                currentState = null
                 bindRecent()
             } else {
                 bindNormalPage(group, pagePos)
@@ -53,7 +79,7 @@ class EmojiVpAdapter(
         }
 
         private fun bindRecent() {
-            scope.launch {
+            collectJob = scope.launch {
                 recentEmojiFlow.collect { list ->
                     binding.loadingView.visibility = View.GONE
                     binding.llEmpty.isVisible = list.isEmpty()
@@ -67,14 +93,13 @@ class EmojiVpAdapter(
             pagePos: Int
         ) {
             val state = pageStates.getOrPut(pagePos) {
-                EmojiPageState(group.listEmoji).apply {
-                    loadMore(42)
+                EmojiPageState(group.listEmoji).also {
+                    scope.launch { it.loadMore(42) }
                 }
             }
+            currentState = state
 
-            addLoadMoreListener(state)
-
-            scope.launch {
+            collectJob = scope.launch {
                 state.data.collect { list ->
                     binding.loadingView.visibility = View.GONE
                     binding.llEmpty.isVisible = list.isEmpty()
@@ -83,25 +108,9 @@ class EmojiVpAdapter(
             }
         }
 
-        private fun addLoadMoreListener(state: EmojiPageState) {
-            binding.rcvEmoji.clearOnScrollListeners()
-            binding.rcvEmoji.addOnScrollListener(
-                object : RecyclerView.OnScrollListener() {
-                    override fun onScrolled(
-                        recyclerView: RecyclerView,
-                        dx: Int,
-                        dy: Int
-                    ) {
-                        if (dy <= 0) return
-                        val lm = recyclerView.layoutManager as? GridLayoutManager ?: return
-                        val last = lm.findLastVisibleItemPosition()
-                        val total = rcvAdapter.itemCount
-                        if (last >= total - 1) {
-                            state.loadMore()
-                        }
-                    }
-                }
-            )
+        fun unbind() {
+            collectJob?.cancel()
+            currentState = null
         }
     }
 
@@ -116,6 +125,11 @@ class EmojiVpAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position), position)
+    }
+
+    override fun onViewRecycled(holder: ViewHolder) {
+        super.onViewRecycled(holder)
+        holder.unbind()
     }
 
     object DiffCallback : DiffUtil.ItemCallback<EmojiGroup>() {

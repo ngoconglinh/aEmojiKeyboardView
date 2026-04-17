@@ -25,15 +25,21 @@ class EmojiRcvAdapter(
     }
 
     inner class EmojiViewHolder(val binding: LayoutEmojiItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Emoji) {
-            binding.tvEmoji.apply {
-                text = item.char
-                textSize = emojiItemSize
-            }
+        private var currentEmoji: Emoji? = null
+
+        init {
+            binding.tvEmoji.textSize = emojiItemSize
             binding.root.setOnClickListener {
-                listener?.onEmojiClick(item.char)
-                onEmojiClicked?.invoke(item)
+                currentEmoji?.let { emoji ->
+                    listener?.onEmojiClick(emoji.char)
+                    onEmojiClicked?.invoke(emoji)
+                }
             }
+        }
+
+        fun bind(item: Emoji) {
+            currentEmoji = item
+            binding.tvEmoji.text = item.char
         }
     }
 
