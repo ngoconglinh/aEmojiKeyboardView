@@ -33,7 +33,7 @@ class EmojiView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr), LifecycleOwner {
 
-    private val lifecycleRegistry = LifecycleRegistry(this)
+    private var lifecycleRegistry = LifecycleRegistry(this)
     override val lifecycle: Lifecycle get() = lifecycleRegistry
     
     private val emojiBinding = LayoutEmojiViewBinding.inflate(LayoutInflater.from(context), this, true)
@@ -89,13 +89,21 @@ class EmojiView @JvmOverloads constructor(
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
+        if (lifecycleRegistry.currentState == Lifecycle.State.DESTROYED) {
+            lifecycleRegistry = LifecycleRegistry(this)
+            lifecycleRegistry.currentState = Lifecycle.State.CREATED
+        }
         lifecycleRegistry.currentState = Lifecycle.State.STARTED
         lifecycleRegistry.currentState = Lifecycle.State.RESUMED
+        setupInternal()
     }
 
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         lifecycleRegistry.currentState = Lifecycle.State.DESTROYED
+        tabLayoutMediator?.detach()
+        tabLayoutMediator = null
+        pageAdapter = null
     }
 
     private fun setupInternal() {
